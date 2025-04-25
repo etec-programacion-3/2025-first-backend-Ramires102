@@ -1,3 +1,5 @@
 @rl = http://localhost:3000/
 @js = application/json
 
+
+GET 

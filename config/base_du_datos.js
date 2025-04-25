@@ -1,3 +1,4 @@
+//importamos sequelize para poder usar la base de datos|
 import {sequelize} from 'sequelize';
 
 //instancia para conexiones
