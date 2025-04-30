@@ -1,5 +1,18 @@
-@rl = http://localhost:3000/
+@rl = http://localhost:3000
 @js = application/json
 
+GET {{rl}}/
 
-GET 
+###
+GET {{rl}}/LIBROS
+Content-Type: {{js}}
+
+###
+POST {{rl}}/LIBROS
+Content-Type: {{js}}
+{
+    "id": 1,
+    "titulo": "El nombre del viento",
+    "autor": "Patrick Rothfuss",
+    "anio_publicacion": 2007,
+}
