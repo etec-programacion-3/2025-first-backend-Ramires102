@@ -2,9 +2,8 @@ import Libros from '../model/LIBROS.js';
 
 //para ver todos los libros
 export const tengotodoslosLibros = async (req, res) => {
-    try
-    {
-//await: sirve para ordenar las cosas de manera asincrona (se ejecuta una después de la otra)
+    try {
+        //await: sirve para ordenar las cosas de manera asincrona (se ejecuta una después de la otra)
         const libros = await Libros.findAll();
         res.json(libros);
     } catch (error) {
@@ -17,7 +16,7 @@ export const tengotodoslosLibros = async (req, res) => {
 export const IDProducto = async (req, res) => {
     try {
         //busca el libro por el id
-        const libro = await Libros.findByPk(req.params.IDproducto);
+        const libro = await Libros.findByPk(req.params.id);
         //si no lo encuentra manda un error
         if (!libro) {
             return res.status(404).json({ error: 'Libro no se a encontrado' });
@@ -63,7 +62,7 @@ export const CrearLibro = async (req, res) => {
 export const EliminoLibro = async (req, res) => {
     try {
         //busca el libro por el id
-        const fueralibro = await Libros.findByPk(req.params.IDproducto);
+        const fueralibro = await Libros.findByPk(req.params.id);
         //si no lo encuentra manda un error
         if (!fueralibro) {
             return res.status(404).json({ error: 'Libro no se a encontrado' });

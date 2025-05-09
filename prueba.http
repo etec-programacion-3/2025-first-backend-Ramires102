@@ -8,11 +8,20 @@ GET {{rl}}/LIBROS
 Content-Type: {{js}}
 
 ###
+GET {{rl}}/LIBROS/1
+Content-Type: {{js}}
+
+###
 POST {{rl}}/LIBROS
 Content-Type: {{js}}
+
 {
     "id": 1,
-    "titulo": "El nombre del viento",
-    "autor": "Patrick Rothfuss",
-    "anio_publicacion": 2007,
+    "Titulo": "El nombre del viento",
+    "Autor": "Patrick Rothfuss",
+    "anio_publicacion": 2007
 }
+###
+DELETE {{rl}}/Libros/1
+Content-Type: {{js}}
+###
