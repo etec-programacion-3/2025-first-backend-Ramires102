@@ -1,8 +1,10 @@
 //importo la ruta de LIBROS.js
 import Libros from './model/LIBROS.js';
 import rutas from './routes/rutas.js';
+import Sequelize from './config/base_du_datos.js'; //importo la base de datos
+import express from 'express'; //importo express para poder usarlo
 
-const express = require('express');
+
 const app = express();
 
 
@@ -16,7 +18,7 @@ app.get('/', (req, res) => {
     res.send('Hola Mundo');
 }
 );
-sequelize.sync().then(() => {
+Sequelize.sync().then(() => {
     app.listen(3000, () => {
       console.log(`Servidor corriendo en http://localhost:3000`);
     });
