@@ -1,5 +1,6 @@
 //importo la ruta de LIBROS.js
-import Libros from './model/LIBROS.js';
+import express from 'express';
+import sequelize from './config/base_du_datos.js';
 import rutas from './routes/rutas.js';
 import Sequelize from './config/base_du_datos.js'; //importo la base de datos
 import express from 'express'; //importo express para poder usarlo
