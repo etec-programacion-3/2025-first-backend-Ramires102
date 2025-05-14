@@ -8,7 +8,7 @@ GET {{rl}}/LIBROS
 Content-Type: {{js}}
 
 ###
-GET {{rl}}/LIBROS?Autor=ilan
+GET {{rl}}/LIBROS/1
 Content-Type: {{js}}
 
 ###
@@ -27,11 +27,11 @@ DELETE {{rl}}/Libros/1
 Content-Type: {{js}}
 ###
 
-GET {{rl}}/LIBROS?Titulo=El%20nombre%20del%20viento
+GET {{rl}}/LIBROS?Titulo="palanca"
 Content-Type: {{js}}
 ###
-GET {{rl}}/Libros?pagina=1
+GET {{rl}}/Libros?paginar=1
 Content-Type: {{js}}
 ###
-GET {{rl}}/Libros?Titulo=El%20nombre%20del%20viento&Autor
+GET {{rl}}/Libros?ordenar=asc
 Content-Type: {{js}}

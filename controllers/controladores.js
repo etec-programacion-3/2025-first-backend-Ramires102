@@ -1,3 +1,4 @@
+import { INTEGER, where } from 'sequelize';
 import Libros from '../model/LIBROS.js';
 
 //para ver todos los libros
@@ -19,7 +20,7 @@ export const IDProducto = async (req, res) => {
         const libro = await Libros.findByPk(req.params.id);
         //si no lo encuentra manda un error
         if (!libro) {
-            return res.status(404).json({ error: 'Libro no se a encontrado' });
+            return res.status(404).json({ error: 'Libro no se ha encontrado' });
         }
         //muestra el libro que coincida con el id
         res.json(libro);
@@ -34,8 +35,10 @@ export const AutorProducto = async (req, res) => {
         //busca el libro por el autor, filtrando con el nombre del autor en el "Where"
         const libro = await Libros.findAll({
             where: {
-                autor: req.params.Autor // Asume que tu modelo tiene un campo 'autor'
-            }});
+                Autor: req.params.Autor // Asume que tu modelo tiene un campo 'autor'
+                }
+            });
+            res.json(libro);
         if (!libro) {
             return res.status(404).json({ error: 'Libros no se an encontrado segun el autor' });
         }
