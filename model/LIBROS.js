@@ -22,8 +22,13 @@ const Libros = Sequelize.define('libros', {
             allowNull: false,
         },
         //año de publicacion
-        anio_publicacion: {
+        Anio_publicacion: {
             type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        //categoria del libro
+        categoria: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
     }, {

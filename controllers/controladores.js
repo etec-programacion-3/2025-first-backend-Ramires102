@@ -46,6 +46,64 @@ export const AutorProducto = async (req, res) => {
     }
 };
 
+//ordena todo alfabeticamente
+export const OTAProducto = async (req, res) => {
+    try {
+        //busca el libro por el autor, filtrando con el nombre del autor en el "Where"
+        const libro = await Libros.findAll({
+            order: [
+                ["Titulo", 'ASC'] 
+            ]});
+        if (!libro) {
+            return res.status(404).json({ error: 'Libros no se an encontrado segun el autor' });
+        }
+        //muestra el/los libro/s que coincidan con el autor
+        res.json(libro);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener el libro' });
+    }
+};
+
+//ordena cada 3 libros segun sea alfabetico y cada 3 libros
+export const PagincaionProducto = async (req, res) => {
+    try {
+      // Página solicitada (por defecto = 1)
+      const pagina = parseInt(req.query.pagina) || 1;
+      
+      // el limite es 3 libros por página
+      const limit = 2;
+      const offset = (pagina - 1) * limit;
+      
+      // Busca los libros por el titulo tenieno el limite y el offset
+      const { count, rows: libros } = await Libros.findAll({
+        order: [["Titulo", 'ASC']],
+        limit: limit,
+        offset: offset
+      });
+        res.json(pagina);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener el libro' });
+    }
+};
+
+//buscar por titulo un libro
+export const TituloProducto = async (req, res) => {
+    try {
+        //busca el libro por el autor, filtrando con el nombre del autor en el "Where"
+        const libro = await Libros.findAll({
+            where: {
+                titulo: req.params.Titulo // Asume que tu modelo tiene un campo 'titutlo'
+            }});
+        if (!libro) {
+            return res.status(404).json({ error: 'Libros no se an encontrado segun el autor' });
+        }
+        //muestra el/los libro/s que coincidan con el autor
+        res.json(libro);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener el libro' });
+    }
+};
+
 //crear/añadir un libro
 export const CrearLibro = async (req, res) => {
     try {
