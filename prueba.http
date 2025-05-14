@@ -8,7 +8,7 @@ GET {{rl}}/LIBROS
 Content-Type: {{js}}
 
 ###
-GET {{rl}}/LIBROS/1
+GET {{rl}}/LIBROS?Autor=ilan
 Content-Type: {{js}}
 
 ###
@@ -17,11 +17,21 @@ Content-Type: {{js}}
 
 {
     "id": 1,
-    "Titulo": "El nombre del viento",
-    "Autor": "Patrick Rothfuss",
-    "anio_publicacion": 2007
+    "Titulo": "palanca",
+    "Autor": "papablo",
+    "Anio_publicacion": 2007,
+    "categoria": "aventura"
 }
 ###
 DELETE {{rl}}/Libros/1
 Content-Type: {{js}}
 ###
+
+GET {{rl}}/LIBROS?Titulo=El%20nombre%20del%20viento
+Content-Type: {{js}}
+###
+GET {{rl}}/Libros?pagina=1
+Content-Type: {{js}}
+###
+GET {{rl}}/Libros?Titulo=El%20nombre%20del%20viento&Autor
+Content-Type: {{js}}
