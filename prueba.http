@@ -1,0 +1,32 @@
+@rl = http://localhost:5000
+@js = application/json
+
+GET {{rl}}/
+
+###
+GET {{rl}}/LIBROS
+Content-Type: {{js}}
+
+###
+GET {{rl}}/LIBROS/6
+Content-Type: {{js}}
+
+###
+POST {{rl}}/LIBROS
+Content-Type: {{js}}
+
+{
+    "Titulo": "pepe el grillo",
+    "Autor": "caramba",
+    "Anio_publicacion": 2008,
+    "categoria": "aventura"
+}
+###
+DELETE {{rl}}/Libros/1
+Content-Type: {{js}}
+###
+GET {{rl}}/LIBROS/autor?Autor=caramba
+Content-Type: {{js}}
+###
+GET {{rl}}/LIBROS/titulo?Titulo=pepe%20el%20grillo
+Content-Type: {{js}}

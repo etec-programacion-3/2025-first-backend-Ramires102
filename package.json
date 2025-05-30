@@ -1,0 +1,28 @@
+{
+  "name": "2025-first-backend-ramires102",
+  "version": "1.0.0",
+  "description": "espressssssssssssssss",
+  "main": "iniciador.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/iniciador.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etec-programacion-3/2025-first-backend-Ramires102.git"
+  },
+  "author": "papablo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etec-programacion-3/2025-first-backend-Ramires102/issues"
+  },
+  "homepage": "https://github.com/etec-programacion-3/2025-first-backend-Ramires102#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  }
+}
