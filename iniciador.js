@@ -5,15 +5,16 @@ import Sequelize from './config/base_du_datos.js'; //importo la base de datos
 import express from 'express'; //importo express para poder usarlo
 import cors from 'cors'; //importo cors para poder usarlo y que no de problemas con el navegador
 
-const app = express();
 
+const app = express();
+app.use(cors());
 
 app.use(express.json());
 
 // Rutas
 app.use('/LIBROS', rutas);
 
-app.use(cors())
+
 
 //llamamos a express para que mande y reciba datos
 app.get('/', (req, res) => {   

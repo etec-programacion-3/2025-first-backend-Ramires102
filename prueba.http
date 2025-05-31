@@ -18,7 +18,7 @@ Content-Type: {{js}}
 {
     "Titulo": "pepe el grillo",
     "Autor": "caramba",
-    "Anio_publicacion": 2008,
+    "anio_publicacion": 2008,
     "categoria": "aventura"
 }
 ###
